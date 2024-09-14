@@ -4,27 +4,27 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: m-45yEao6rnJtWCBYp9KYJwu_SRv92hdmFm39onUOxA
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Prof Dr Alp Burak Çatakoğlu
+    template: '%s — Prof Dr Alp Burak Çatakoğlu'
+  description: "Prof Dr Alp Burak Çatakoğlu resmi web sitesi. Koroner anjiyo ve stent, TAVİ, MitraClip, TriClip, ASD ve PFO kapatma, karotis stentleme ve renal denervasyon gibi ameliyatsız kalp tedavileri hakkında bilgi alabilirsiniz."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Prof. Dr. Alp Burak Çatakoğlu
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/alp_burak_catakoglu.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@dralpburak'
+    site: '@dralpburak'
     cardType: summary_large_image
 
 i18n:
@@ -43,20 +43,20 @@ apps:
         index: true
 
     list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      isEnabled: false
+      pathname: 'makaleler' # Blog main path, you can change this to "articles" (/articles)
       robots:
-        index: true
+        index: false
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: 'kategori' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
-        index: true
+        index: false
 
     tag:
       isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      pathname: 'etiket' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
         index: false
 
@@ -66,7 +66,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: "G-YD3XJJRTL7"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

@@ -13,7 +13,7 @@ import type { AstroIntegration } from 'astro';
 import embeds from 'astro-embed/integration';
 
 import astrowind from './vendor/integration';
-
+import markdownConfig from './markdown.config';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,6 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  markdown: markdownConfig,
   i18n: {
     defaultLocale: "tr",
     locales: ["tr", "en", "fr"],
@@ -57,7 +58,10 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap(),
-    mdx(),
+    mdx({
+      ...markdownConfig,
+      extendPlugins: false,
+    }),
     icon({
       include: {
         tabler: ['*'],
