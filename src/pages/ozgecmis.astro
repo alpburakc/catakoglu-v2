@@ -1,0 +1,598 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Özgeçmiş',
+};
+---
+
+<Layout metadata={metadata}>
+ 
+   <!-- Menu ******************* -->
+   <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Ana Sayfa', href: '/' },
+        { text: 'Özgeçmiş', href: 'ozgecmis' },
+        { text: 'Uzmanlık Alanları', href: 'uzmanlik-alanlari' },
+        { text: 'Videolar', href: 'https://youtube.com/c/AlpBurakCatakoglu' },
+        { text: 'İletişim', href: 'iletisim' },
+      ]}
+      actions={[
+        {
+          text: 'Randevu',
+          href: 'iletisim',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>  
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="ozgecmis"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-youtube',
+        callToAction: {
+          target: '_blank',
+          text: 'YouTube',
+          href: 'https://youtube.com/c/AlpBurakCatakoglu',
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'Linkedin',
+          href: 'https://linkedin.com/in/catakoglu',
+        },
+      },
+      {
+        icon: 'tabler:brand-instagram',
+        callToAction: {
+          target: '_blank',
+          text: 'Instagram',
+          href: 'https://instagram.com/dralpburak',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/alp_kare_3.png',
+      alt: 'Alp Burak Çatakoğlu',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Özgeçmiş</h2>
+      <p>
+        1975 Almanya doğumlu. 1999’da Cerrahpaşa Tıp Fakültesi İngilizce Tıp mezunu. 2004’de Florence Nightingale Hastanesi’nde uzman kardiyolog. 2013’e kadar Florence Nightingale Hastanesi‘nde girişimsel kardiyolog. 2012’de Doçent ve 2017’de Profesör ünvanını almıştır. 2008’de Avrupa Kardiyoloji Derneği akademik üyesi seçilmiştir (FESC). 
+      </p>
+      <br />
+      <p>
+        2013’ten bu yana Liv Hospital Ulus, Kalp Katerizasyonu ve Anjiyografi Ünitesi direktörü, İstinye Üniversitesi Tıp Fakültesi kurucu yönetim kurulu üyesidir. Girişimsel Kardiyoloji Derneği başkanıdır.
+      </p>
+      <br />
+      <p>Sosyal medyada yer alan bilgilendirici içeriklere ulaşmak ve bağlantı kurmak için ziyaret edebilirsiniz.</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Akademik Ünvanlar"
+    items={[
+      {
+        title:
+          'Profesör Doktor <br /> <span class="font-normal">İstinye Üniversitesi Tıp Fakültesi, Kardiyoloji Anabilim Dalı ve Liv Hospital Ulus, Kardiyoloji Departmanı, İstanbul</span> <br /> <span class="text-sm font-normal">2017 - Devam ediyor</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Doçent Doktor <br /> <span class="font-normal">Liv Hospital Ulus, Kardiyoloji Departmanı</span> <br /> <span class="text-sm font-normal">2012 - 2017</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Yardımcı Doçent Doktor <br /> <span class="font-normal">Florence Nightingale Hastanesi, İstanbul Bilim Üniversitesi, İstanbul</span> <br /> <span class="text-sm font-normal">2008 - 2012</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Kardiyoloji Uzmanı <br /> <span class="font-normal">Florence Nightingale Hastanesi, İstanbul</span> <br /> <span class="text-sm font-normal">2004 - 2008</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Kardiyoloji Asistanı <br /> <span class="font-normal">Florence Nightingale Hastanesi, İstanbul</span> <br /> <span class="text-sm font-normal">1999 - 2004</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Tıp Doktoru <br /> <span class="font-normal">İ.Ü. Cerrahpaşa Tıp Fakültesi İngilizce Tıp Programı, İstanbul</span> <br /> <span class="text-sm font-normal">1993 - 1999</span>',
+        icon: 'tabler:school',
+      },
+      {
+        title:
+          'Lise <br /> <span class="font-normal">Kdz. Ereğli Anadolu Lisesi (KEAL), Kdz. Ereğli</span> <br /> <span class="text-sm font-normal">1987 - 1993</span>',
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Uluslararası Görevler"
+    items={[
+      {
+        title: `Fellow of European Society of Cardiology <br /> <span class="font-normal">Akademik Üye`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `European Bifurcation Club <br /> <span class="font-normal">Üye`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `EuroCTO Club <br /> <span class="font-normal">Üye`,
+        icon: 'tabler:social',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Ulusal Görevler"
+    items={[
+      {
+        title: `Girişimsel Kardiyoloji Derneği <br /> <span class="font-normal">Başkan`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `Türk Kardiyoloji Derneği <br /> <span class="font-normal">Girişimsel Kardiyoloji Birliği Geçmiş Yönetim Kurulu Üyesi`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `İstanbul Girişimsel Kardiyoloji Akademisi Derneği <br /> <span class="font-normal">Yönetim Kurulu Üyesi`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `Hipertansiyon ve Ateroskleroz Derneği <br /> <span class="font-normal">Yönetim Kurulu Üyesi`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `Liv Hospital Ulus <br /> <span class="font-normal">Kalp Kateterizasyonu ve Anjiyografi Ünitesi Direktörü`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `İstinye Üniversitesi Tıp Fkültesi <br /> <span class="font-normal">Kurucu Yönetim Kurulu Üyesi`,
+        icon: 'tabler:social',
+      },
+      {
+        title: `Advanced Cardiovascular Solutions <br /> <span class="font-normal">Kurs Direktörü`,
+        icon: 'tabler:social',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Mesleki Tecrübe"
+    items={[
+      {
+        title:
+          'Liv Hospital Ulus, Kardiyoloji Bölümü <br /> <span class="text-sm font-normal">2013 - Devam ediyor</span>',
+        description: "Anjiyografi ve Kalp Kateterizasyonu Laboratuarı Direktörü olarak Girişimsel Kardiyoloji Bölümünde çalışmakta. El bileğinden girişimler, eriyen stentler, kronik tam tıkalı koroner damarlar ve bifurkasyon lezyonları (çatallaşan damarlar) özel ilgi alanlarıdır. Koroner fizyoloji (FFR), intravasküler ultrason (IVUS) ve 3 boyutlu optical coherence tomography (3D OCT) yöntemlerini aktif olarak kullanmaktadır. Transkateter Aort Kapak Implantasyonu (TAVI) ve dirençli hipertansiyon için uygulanan renal denervasyon tedavi amacıyla yaptığı diğer girişimlerdir",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'İstinye Üniversitesi Kardiyoloji Anabilim Dalı <br /> <span class="text-sm font-normal">2016 - 2022</span>',
+        description: "İstinye Üniversitesi Tıp Fakültesi kurucu öğretim üyesi. 2016-2018 yıllarında Fakülte Kurulu ve Yönetim Kurulu üyesi olarak da görev yaptı. Pek çok öğrencinin eğitimine katkı sağladı.",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Türk Kardiyoloji Derneği Girişimsel Kardiyoloji Birliği Yönetim Kurulu Üyesi <br /> <span class="text-sm font-normal">2016 - 2018</span>',
+        description: "TKD Girişimsel Kardiyoloji Birliği (TAPCI-TSC) Yönetim Kurulu üyesi olarak 2016 – 2018 döneminde görev aldı.",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Gülhane Askeri Tıp Akademisi, Kardiyoloji Anabilim Dalı, Ankara <br /> <span class="text-sm font-normal">2009 - 2010</span>',
+        description: "Askerlik görevi süresince klinik kardiyoloji alanında hizmet verdi",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'İstanbul Bilim Üniversitesi, Kardiyoloji Anabilim Dalı <br /> <span class="text-sm font-normal">2008 - 2012</span>',
+        description: "Üniversitenin öğretim kadrosunda yardımcı doçent olarak görev yaptı. Tıp fakültesi öğrencileri ve uzmanlık öğrencilerinin klinik kardiyoloji ve girişimsel kardiyoloji alanındaki eğitimlerine katkı sağladı.",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Florence Nightingale Hastanesi, Kardiyoloji Bölümü <br /> <span class="text-sm font-normal">2004 - 2013</span>',
+        description: "Girişimsel Kardiyoloji Uzmanı olarak Anjiyografi ve Kalp Kateterizasyonu Laboratuarında görev yaptı. Kompleks koroner işlemler, FFR, IVUS, TAVI ve renal denervasyon ile ilgili çalışmalar yayınladı",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Florence Nightingale Hastanesi, Kardiyoloji Bölümü <br /> <span class="text-sm font-normal">1999 - 2004</span>',
+        description: "Kardiyoloji Uzmanlık Eğitimi süresince klinik kardiyoloji, kardiyoloji yoğun bakım hastalarının takip ve tedavisi, ekokardiyografi, nükleer tıp, eforlu EKG, girişimsel kardiyoloji ve koroner BT konularında tecrübesini arttırdı",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Oxford Üniversitesi, İngiltere <br /> <span class="text-sm font-normal">1998</span>',
+        description: "Nöroşirurji alanında staj yaptı.",
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'St. George’s Hospital, Londra Üniversitesi, İngiltere <br /> <span class="text-sm font-normal">1997</span>',
+        description: "İç hastalıkları stajı için farklı departmanlarda çalıştı.",
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Sertifikalar"
+    items={[
+      {
+        title:
+          'MitraClip Klinik Kullanım Sertifikası <br /> <span class="text-sm font-normal">2020</span>',
+        description: "MitraClip yöntemi ile ilgili klinik sertifika",
+        icon: 'tabler:certificate',
+      },
+      {
+        title:
+          'Bioresorbable Vascular Scaffold (Eriyen Stent) Klinik Kullanım Sertifikasyonu <br /> <span class="text-sm font-normal">2012</span>',
+        description: "EuroPCR, Paris, Fransa",
+        icon: 'tabler:certificate',
+      },
+      {
+        title:
+          'Transkateter Aort Kapak İmplantasyonu (TAVİ) Uygulamalı Eğitim <br /> <span class="text-sm font-normal">2010</span>',
+        description: "Edwards Headquarters, Nyon, İsviçre",
+        icon: 'tabler:certificate',
+      },
+      {
+        title:
+          'Koroner Fizyoloji ve FFR’ın Klinik Kullanımı Kursu <br /> <span class="text-sm font-normal">2009</span>',
+        description: "ESC European Heart House, Sophia Antipolis, Fransa",
+        icon: 'tabler:certificate',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Ödül"
+    items={[
+      {
+        title:
+          'Türk Kardiyoloji Derneği – Eczacıbaşı Zentiva En İyi Girişimsel Olgu Ödülü <br /> <span class="text-sm font-normal">2009</span>',
+        description: "LAD’deki Kronik Tam Tıkalı Lezyona ve LIMA-LAD Anastomozundaki Darlığa Perkütan Koroner Girişim. XVI. Ulusal Uygulamalı Girişimsel Kardiyoloji Toplantısı, Antalya",
+        icon: 'tabler:trophy',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+    id="resume"
+    title="Bilimsel Makalelerden Bazıları"
+    items={[
+         {
+        title:
+          '<span class="font-normal">Management of dyslipidaemia in patients with coronary heart disease: Results from the ESC-EORP EUROASPIRE V survey in 27 countries</span>',
+        description: "Atherosclerosis. 2019 Jun:285:135-146.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Testosterone replacement therapy and cardiovascular events.</span>',
+        description: "Turk Kardiyol Dern Ars. 2017 Oct;45(7):664-672. doi: 10.5543/tkda.2017.00531.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Coronary collateral circulation and ghrelin peptide</span>',
+        description: "Turk Kardiyol Dern Ars. 2017 Jun;45(4):308-309. doi: 10.5543/tkda.2017.01138.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Screening for Glucose Perturbations and Risk Factor Management in Dysglycemic Patients With Coronary Artery Disease-A Persistent Challenge in Need of Substantial Improvement: A Report From ESC EORP EUROASPIRE V</span>',
+        description: "Diabetes Care. 2020 Apr;43(4):726-733.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">EUROASPIRE-IV: European Society of Cardiology study of lifestyle, risk factors, and treatment approaches in patients with coronary artery disease: Data from Turkey</span>',
+        description: "Turk Kardiyol Dern Ars. 2017 Mar;45(2):134-144.  doi: 10.5543/tkda.2016.82352.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Relationship between endothelial dysfunction and cardiovascular risk factors and the extent and severity of coronary artery disease.</span>',
+        description: "Turk Kardiyol Dern Ars. 2014 Jul;42(5):435-43. doi: 10.5543/tkda.2014.72798",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">How to estimate left ventricular hypertrophy in hypertensive patients.</span>',
+        description: "Turk Kardiyol Dern Ars. 2014 Jul;42(5):435-43. doi: 10.5543/tkda.2014.72798",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Transcatheter aortic valve implantation: a novel perspective by real-time three-dimensional transesophageal echocardiography.</span>',
+        description: "Anadolu Kardiyol Derg. 2011 Dec 10;11(8):E32-3. doi: 10.5152/akd.2011.209.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Brain natriuretic peptide and tumour markers in the diagnosis of non-malignant pericardial effusion.</span>',
+        description: "Int J Cardiol. 2011 Feb 3;146(3):481-3. doi: 10.1016/j.ijcard.2010.12.037. Epub 2010 Dec 28.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Comparison of intracoronary versus intravenous administration of tirofiban in primary percutaneous coronary intervention.</span>',
+        description: "Anadolu Kardiyol Derg. 2010 Aug;10(4):340-5. doi: 10.5152/akd.2010.093.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">The Highway Technique: a new stenting technique to treat coronary bifurcation lesions.</span>',
+        description: "EuroIntervention. 2010 Feb;5(7):821-5. doi: 10.4244/eijv5i7a137.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Treatment of saphenous vein graft lesions with paclitaxel- and sirolimus-eluting stents: comparison of short- and long-term clinical outcomes.</span>',
+        description: "Int J Cardiol. 2009 Sep 11;137(1):67. doi: 10.1016/j.ijcard.2008.05.015. Epub 2008 Dec 14.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Common variants in the ATP-binding cassette transporter 1 gene with decreased HDL-cholesterol levels and coronary artery disease.</span>',
+        description: "Arch Med Res. 2008 Nov;39(8):735-42. doi: 10.1016/j.arcmed.2008.07.008.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Aneurysm of the membranous septum detected during left ventriculography and demonstrated by cardiac magnetic resonance imaging.</span>',
+        description: "Int J Cardiol. 2009 Aug 21;136(3):e60-2. doi: 10.1016/j.ijcard.2008.05.012. Epub 2008 Jul 31.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Impact of anemia on nonfatal coronary events after percutaneous coronary interventions.</span>',
+        description: "Heart Vessels. 2007 Nov;22(6):383-8. Epub 2007 Nov 26.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">The relation between coronary flow rate, plasma endothelin-1 concentrations, and clinical characteristics in patients with normal coronary arteries.</span>',
+        description: "Arch Med Res. 2008 Nov;39(8):735-42. doi: 10.1016/j.arcmed.2008.07.008.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Double right coronary artery originating from separate orifices–a case report and review of the literature.</span>',
+        description: "Int J Cardiol. 2007 May 16;118(1):e6-7. Epub 2007 Mar 23.",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Thrombosed giant right coronary artery aneurysm.</span>',
+        description: "Anadolu Kardiyol Derg. 2007 Sep;7(3):350-1",
+        icon: 'tabler:article',
+      },
+      {
+        title:
+          '<span class="font-normal">Hyperuricemia in hypothyroidism: is it associated with post-insulin infusion glycemic response?</span>',
+        description: "Tohoku J Exp Med. 2003 Feb;199(2):59-68.",
+        icon: 'tabler:article',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Steps
+  id="resume"
+  title="Konuşmalardan Bazıları"
+  items={[
+   {
+        title:
+          '<span class="font-normal">OCT in ACS. Panelist</span>',
+        description: "EuroPCR, 2016 Paris",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Challenging indications for rotablator. Panelist</span>',
+        description: "EuroPCR, 2016 Paris",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Long lesion scaffolding</span>',
+        description: "Abbott Vascular PCI Optimisation Meeting: Can we still improve PCI acute and long term outcomes? The Middle East perspective. 2016 Dubai",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Bifurcation Live Case. Panelist</span>',
+        description: "Medtronic Experts Summit, 2016 Dubai",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Distal Coronary Lesions: Scaffolding? Drug Eluting Balloon? I prefer distal scaffolding stent</span>',
+        description: "12th International Congress of Update in Cardiology and Cardiovascular Surgery. 2016 Antalya",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Hands On, Wet Lab Endovascular Intervention Courses On Simulator Coronary Interventions. Kurs Direktörlüğü</span>',
+        description: "11th International Congress of Update in Cardiology and Cardiovascular Surgery. 2015 İstanbul",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Tough Calls in Interventional Cardiology. Oturum Başkanlığı</span>',
+        description: "11th International Congress of Update in Cardiology and Cardiovascular Surgery. 2015 İstanbul",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Renal Denervation Should Be Performed</span>',
+        description: "11th International Congress of Update in Cardiology and Cardiovascular Surgery. 2015 İstanbul",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">An image is worth 1000 words. Konuşmacı</span>',
+        description: "EuroPCR, 2015 Paris",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Bioresorbable scaffolds in left main and bifurcation lesions. Oturum Başkanlığı</span>',
+        description: "EuroPCR, 2015 Paris",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Difficult Case: Challenges for Treatment</span>',
+        description: "3rd European Meeting on Hypertension and Cardiovascular Protection Congress. 2015 Milano",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Revascularization of heart failure patients with multivessel disease</span>',
+        description: "International Congress of Heart Failure. 2012 İstanbul",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">Revascularization of heart failure patients with multivessel disease</span>',
+        description: "International Congress of Heart Failure",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">A complicated myocardial infarction</span>',
+        description: "TCT, 2012 Miami",
+        icon: 'tabler:microphone',
+      },
+      {
+        title:
+          '<span class="font-normal">The Highway Technique: A new technique for treating bifurcation coronary lesions</span>',
+        description: "European Bifurcation Club Meeting, 2011 Lizbon",
+        icon: 'tabler:microphone',
+      },
+  ]}
+  classes={{ container: 'max-w-3xl' }}
+/>
+
+<Features2
+    title="Uzmanlık Alanları"
+    subtitle="Prof. Dr. Alp Burak Çatakoğlu'nun 25 yıldan daha fazla tecrübesi ile teşhis ve tedavideki uzmanlık alanları."
+    columns={3}
+    items={[
+      {
+        title: 'Koroner Anjiyografi',
+        description:
+          'El bileğinden lokal anestezi ile 5 dakikada koroner damarların detaylı görüntülemesi yapılabilmektedir. 1-2 saat içerisinde taburculuk mümkün.',
+        icon: 'tabler:trending-down-3',
+        link: 'anjiyo'
+      },
+      {
+        title: 'Balon ve Stent',
+        description:
+          'Koroner damarlardaki kritik darlıklar, açık bypass ameliyatı yerine, el bileğinden lokal anestezi ile, stent ve balon kullanılarak tedavi edilebilmektedir.',
+        icon: 'tabler:arrow-rotary-straight',
+        link: 'stent'
+      },
+      {
+        title: 'TAVİ',
+        description: `Aort darlıklarında, açık ameliyata gerek kalmadan, kasıktan girilerek biyolojik kapak yerleştirilebilmketedir. Sedasyon ile yapılan işlemden 1-2 gün sonra taburculuk mümkün. `,
+        icon: 'tabler:oval-vertical',
+      },
+      {
+        title: 'MitraClip ve TriClip',
+        description:
+          'İleri derecede mitral veya triküspit yetmezlikte kasıktan girilerek mitral kapağa yerleştirilen mandal benzeri kliplerle ameliyatsız tedavi başarılı sonuçlar vermektedir.',
+        icon: 'tabler:location',
+        link: 'mitraclip'
+      },
+      {
+        title: 'ASD Kapatma',
+        description:
+          'Kalp içinde doğuştan iki boşluğu ayıran septum denilen duvarda var olabilen delikler, kasıktan girilerek şemsiye benzeri cihazlarla kapatılabilmektedir.',
+        icon: 'tabler:inner-shadow-bottom-right',
+        link: 'asd-kapatma'
+      },
+      {
+        title: 'PFO Kapatma',
+        description:
+          'Beyne veya vücuda atan pıhtıların bazen kaynağı kalpte doğumda kapanmayan formaen ovale adındaki delik olabilmektedir. Kasıktan girilerek bu delikler ameliyatsız kapatılmaktadır.',
+        icon: 'tabler:inner-shadow-top-right',
+        link: 'pfo-kapatma'
+      },
+      {
+        title: 'LAA Kapatma',
+        description:
+          'Kalbin sağ kulakçığındaki apendiks adlı kesecikte bazı riritm bozukluklarında felce neden olan pıhtılar oluşabilmektedir. Bu kese kasıktan girilerek kapatılabilir.',
+        icon: 'tabler:health-recognition',
+        link: 'laa-kapatma'
+      },
+      {
+        title: 'Karotis Stentleme',
+        description: `Beyni besleyen şah damarlarımızdaki (karotis) kritik darlıklar, kasıktan girilerek stent ile tedavi edilebilmektedir. Özel filtreler kullanılarak yapılan işlemler daha güvenlidir.`,
+        icon: 'tabler:user-heart',
+        link: 'karotis-stent'
+      },
+      {
+        title: 'Renal Denervasyon',
+        description:
+          'Hipertansiyonda ilaçsız tedavi ile tansiyonu düşürmek renal denervasyon ile mümkün. 30 dakikalık, kasıktan girilerek yapılan bu tedavi ile kalıcı tansiyon kontrolü sağlanmaktadır.',
+        icon: 'tabler:graph',
+        link: 'renal-denervasyon'
+      },
+    ]}
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+  
+</Layout>

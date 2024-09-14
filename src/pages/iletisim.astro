@@ -1,0 +1,59 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="İLETİŞİM" title="Bize Ulaşın!" />
+
+  <iframe width='100%' height='750px' src='https://alpburak.zohobookings.com/portal-embed#/alpburak' frameborder='0' allowfullscreen='' > </iframe>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Size yardım etmek için hazırız!"
+    items={[
+      {
+        title: 'Randevu oluşturma',
+        description: `Randevu almak için telefon ile bize mesai saatlerinde ulaşabilirsiniz. Online danışma için yukarıdaki formu kullanabilirsiniz.`,
+      },
+      {
+        title: 'Fiyat bilgisi',
+        description:
+          'Muayene, anjiyo, stent, TAVİ, MitraClip gibi işlemler konusunda fiyat bilgisi almak isterseniz bize telefon veya WhatsApp ile ulaşabilirsiniz.',
+        link: 'https://wa.me/905344025050'
+      },
+      {
+        title: 'Online danışma',
+        description:
+          'İşlemler ile ilgili veya sorununuz ile ilgili danışmak istediğiniz konular varsa bize online randevu alarak ulaşabilirsiniz. Yukarıdaki formu doldurmanız yeterlidir.',
+      },
+      {
+        title: 'Telefon',
+        description: '+90 (534) 402-5050',
+        icon: 'tabler:headset',
+        link: 'tel:+905344025050'
+      },
+      {
+        title: 'Email',
+        description: 'alpburak@catakoglu.com',
+        icon: 'tabler:mail',
+        link: 'mailto:alpburak@catakoglu.com'
+      },
+      {
+        title: 'Konum',
+        description: 'Liv Hospital Ulus, Ahmet Adnan Saygun C. No 5, Ulus, Beşiktaş, İstanbul',
+        icon: 'tabler:map-pin',
+        link: 'https://maps.app.goo.gl/whWzKosqDH6PEZya9'
+      },
+    ]}
+  />
+</Layout>

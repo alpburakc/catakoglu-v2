@@ -1,0 +1,471 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Prof. Dr. Alp Burak Çatakoğlu — Girişimsel Kardiyolog',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Menu ******************* -->
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Ana Sayfa', href: '/' },
+        { text: 'Özgeçmiş', href: 'ozgecmis' },
+        { text: 'Uzmanlık Alanları', href: 'uzmanlik-alanlari' },
+        { text: 'Videolar', href: 'https://youtube.com/c/AlpBurakCatakoglu' },
+        { text: 'İletişim', href: 'iletisim' },
+      ]}
+      actions={[
+        {
+          text: 'Randevu',
+          href: 'iletisim',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>  
+  
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Özgeçmiş',
+        href: 'ozgecmis',
+        target: '_blank',
+        icon: 'tabler:arrow-right',
+      },
+      { text: 'Randevu', href: 'iletisim' },
+    ]}
+    image={{ src: '~/assets/images/alp_kare_3.png', alt: 'Alp Burak Çatakoğlu' }}
+  >
+    <Fragment slot="title">
+      Prof. Dr. Alp Burak Çatakoğlu
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="block mb-1 font-bold text-4xl text-blue-600 dark:text-white highlight">Girişimsel Kardiyolog.</span>
+      Koroner anjiyografi ve stent, TAVI, MitraClip, renal denervasyon, ASD ve PFO kapatma, karotis stent, ileri teknolojiler ile ameliyatsız kalp tedavileri.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="kariyer"
+    tagline="KARİYER"
+    title="Prof. Dr. Alp Burak Çatakoğlu kimdir?"
+    subtitle="Kalp ve damar hastalıklarını ameliyatsız, kapalı yöntemlerle tedavi etmeye adanmış bir kariyer, başarı ve etkili sonuçlar elde etmek için ileri teknolojileri ülkemize adapte eden, güncel bilimsel veriler ışığında hastalarını yönlendiren bir bilim insanı."
+    items={[
+      {
+        title: '1975 Almanya Doğumlu',
+        description:
+          'Almanyanın Augsburg şehrinde doğmuştur.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Kdz Ereğli Anadolu Lisesi',
+        description:
+          "Kdz. Ereğli Anadolu Lisesi'nden 1993 yılında derece ile mezun olmuştur.",
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Cerrahpaşa Tıp Fakültesi, İngilizce Tıp',
+        description:
+          'İ.Ü. Cerrahpaşa Tıp Fakültesi İngilizce Tıp Programından 1999 yılında derece ile mezun olmuştur.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Kardiyoloji Profesörü',
+        description:
+          "2008'de Avrupa Kardiyoloji Derneği akademik üyesi (FESC), 2012 yılında kardiyoloji doçenti, 2017 yılında kardiyoloji profesörü ünvanlarını almıştır. İstinye Üniversitesi Tıp Fakültesi kurucu yönetim ve yürütme kurulu üyesidir.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Liv Hospital Ulus, Girişimsel Kardiyoloji Direktörü',
+        description:
+          "2013 ylından bu yana Liv Hospital Ulus girişimsel kardiyoloji direktörüdür.",
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Girişimsel Kardiyoloji Derneği Başkanı',
+        description:
+          'Türk girişimsel kardiyolojisine pek çok farklı dernekte görev alarak hizmet etmektedir. Avrupa Bifurkasyon Kulübü, Avrupa Girişimsel Kardiyoloji Birliği, Türk Kardiyoloji Derneği, İstanbul Grişimsel Kardiyoloji Akademisi Derneği gibi pek çok kurumda yöneticilik yapmıştır.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="KARDİYOLOJİ"
+    title="Uzmanlık Alanları"
+    items={[
+      {
+        title: 'Koroner anjiyografi',
+        description:
+          'El bileğinden lokal anestezi ile yapılan koroner anjiyo sayesinde kalp damarları görüntülenebilmektedir.',
+      },
+      {
+        title: 'Koroner stent',
+        description:
+          'İlaçlı koroner stentler sayesinde pek çok hasta bypass cerrahisine ihtiyaç duymadan el bileğinden tedavi edilebilmektedir. İlaçlı balon sayesinde stentsiz tedaviler de mümkündür.',
+      },
+      {
+        title: 'Kompleks koroner girişimler',
+        description:
+          'Ana koroner, bifurkasyon, yoğun kalsifik, tam tıkalı açılması zor ve riskli lezyonlarda rotablaör, Shockwave, IVUS, OCT gibi tenolojiler kullanılarak açık ameliyat gerekmeden tedavi yapılabilmektedir.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ameliyatsız Çözümler</h3>
+      Kalp ve damar hastalıklarının tüm alanlarında ileri teknolojiler kullanılarak ameliyatsız, kapalı çözümler ile tedaviler mümkündür.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Aort kapak darlığında TAVI',
+        description: `TAVI yöntemi ile aort kapak darlıkları, kasıktan girilerek tedavi edilmektedir. Güncel tekniklerle cerrahiye eşdeğer sonuçlar elde edilmektedir. `,
+      },
+      {
+        title: 'Mitral yetersizlikte MitraClip',
+        description:
+          'Mitral kapak yetersiliğinde açık ameliyatı riskli olan hastalarda kasıktan girilerek, kapalı yöntemle yapılan MitraClip mandallama yöntemi ile başarılı sonuçlar elde edilmektedir.',
+      },
+      {
+        title: 'Triküspit yetersizlikte TriClip',
+        description:
+          "Mitral kapakta yapılan işleme benzer bir şekilde günümüzde triküspit kapak da mandallama işlemi ile tedavi edilebilmektedir.",
+      },
+      
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Kalp kapak hastalıkları da açık kalp ameliyatı gerektirmeden, kapalı yöntemlerle tedavi edilebilmektedir. </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Renal denervasyon',
+        description:
+          'Hipertansiyonu olan hastalarda kasıktan girilerek böbrek damarlarına radyofrekans ablasyon yapılabilmekte ve tansiyon değerleri kalıcı olarak düşürülebilmektedir.',
+      },
+      {
+        title: 'Sol atrial apendiks LAA kapama',
+        description:
+          'Atrial fibrilasyonu olan ancak kanama riski yüksek hastalarda LAA kapama işlemi ile pıhtı ve kanama riski azaltılabilmektedir.',
+      },
+      {
+        title: 'ASD ve PFO kapama',
+        description:
+          'Doğuştan olan ancak yetişkinlikte farkedilen kalp delikleri kasıktan girilerek kapatılabilmektedir.',
+      },
+      {
+        title: 'Karotis ve periferik stentleme',
+        description: `Beyni besleyen şah damarlarındaki darlıklara ve bacak atar damarlarındaki darlıklara balon ve stent işlemi yapılarak ameliyatsız çözümler sağlanabilmektedir.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">Diğer kalp hastalıklarında da teknolojik çözümler sağlıyoruz</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="103 Google Yorumlar"
+    subtitle="Hastalarımızdan gelen teşekkür yazılarından bazıları"
+    testimonials={[
+      {
+        testimonial: `Babamın anjiyosunu gerçekleştiren Alp Hocayı uzun araştırmalar sonucu bulduk. Bilekten anjiyo önerdi, son derece konforlu bir şekilde anjiyoyu yaptı. Mesleğinde çok başarılı, kendinden emin, cana yakın. Her şeyi gayet güzel izah ediyor, en ufak bir soru işareti kalmıyor aklınızda. Ailemizin bundan sonra gideceği doktor belli. Teşekkürler Alp Hocam.`,
+        name: 'Naz Bölükbaşı',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a-/ALV-UjXgh5lgJnyKMVRlx8ElZBcA5rMcr1JNBCRC3-fh9c2vFarK99M=w120-h120-p-rp-mo-br100',
+          alt: 'NB Image',
+        },
+      },
+      {
+        testimonial: `Kalp krizi sonucu A.. Şehir Hastanesi’nde yatan annemi 10 gün boyunca yoğun bakımda tuttular, annem riskli olduğu ve ana koroner damarları kapalı olduğu için önce stent takmak istemediler sonra bypass olamaz dediler. Bu süreçte farklı doktorlar 8 stent takılır ya da farklı bir hastane de 4 stent 3 balon yapılır dediler. Telefonla konuştuğum Alp hoca ‘nın bilgi ve tecrübesine güvenerek annemi İstanbul’a getirdim , annemin riskli ana damarına 20 dk süren bir sadece 2 stent takan Alp hoca sayesinde annemin durumu şuan çok iyi. Alp Hoca’ya çok teşekkürler, iyi ki varsınız hocam. Annem emin ellerde.`,
+        name: 'Yildiz Boz',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a-/ALV-UjWW4Dkbu_jTwFmCUGYWV-nVPzXco1FUPJzTgn-D_aLzefX8rfl_=w120-h120-p-rp-mo-ba2-br100',
+          alt: 'YB Image',
+        },
+      },
+      {
+        testimonial: `Mükemmel bir kardiyolog olmasının yanı sıra, süper bir insan olarak, Alp Bey’in hastası olmam nedeniyle kendimi çok şanslı addediyorum. İlgisi, beyefendi davranışları ve elbette doktorluğu her türlü takdirin üzerindedir.`,
+        name: 'Recep Özgan',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a-/ALV-UjX6iJjwrAg2DnDibt_6LD_ZcX3dA631s1EY_veYTEo_QS7lguc=w120-h120-p-rp-mo-br100',
+          alt: 'RÖ Image',
+        },
+      },
+      {
+        testimonial: `Hocamızla annemin tedavisi sırasında tanıştık ve o zamandan beri annemin kontrolleri ve takibi Alp Hocamızda. Gerek yaklaşım ve diyaloğundaki samimiyet ve netlik ve gerekse değerlendirmelerindeki güven veren ciddiyeti bizleri çok memnun etti.Özellikle güven veren yüksek bilgi donanımının yanısıra , hasta diyaloğunda çok önemli olan; insani yaklaşımı üst seviyedeki hocamızın başarılarının devamını dileriz.`,
+        name: 'Ufuk Bayam',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a-/ALV-UjVSNUaRs1iKG8BV9gXx-QDTOsV1K_RJKZqHeVK_g4VhERox3xo=w120-h120-p-rp-mo-br100',
+          alt: 'UB Image',
+        },
+      },
+      {
+        testimonial: `Hastası ile son derece ilgili ve gelişmelere hakim. Son derece sakin ve muhatabını rahatlatan son dönem Kardiologlar arasında önemli bir değer.
+Allah bu tür hekimleri başımızdan eksik etmesin.`,
+        name: 'Nedim Akkohen',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a/ACg8ocJ139iAnuZZYmGeBenY8KqZ2QD03a0A0GR__A6HsfEpAxXb_A=w120-h120-p-rp-mo-ba4-br100',
+          alt: 'NA Image',
+        },
+      },
+      {
+        testimonial: `Dr. Alp is an amazing person & doctor. He saved my dad’s life twice after a cardiac arrest and is our family’s doctor ever since. He is such a meticulous doctor always covering the details. As a family we highly recommend Dr.Alp, thank you once again!`,
+        name: 'Lara Zarb',
+        image: {
+          src: 'https://lh3.googleusercontent.com/a/ACg8ocL1jrEwHUuYVCb8x15BoCS_aken-Hk4ZmESc0i4Q3p_BTjp9g=w120-h120-p-rp-mo-br100',
+          alt: 'LZ Image',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Tüm Yorumlar',
+        href: 'https://www.google.com/maps/place/Prof.+Dr.+Alp+Burak+%C3%87atako%C4%9Flu/@41.060808,29.028946,17z/data=!4m8!3m7!1s0x14cab7b00f2ecfcd:0x5e1b7dc5bb75df54!8m2!3d41.060808!4d29.028946!9m1!1b1!16s%2Fg%2F11fd4fk_mr?hl=tr-TR&entry=ttu&g_ep=EgoyMDI0MDkwMi4wIKXMDSoASAFQAw%3D%3D',
+        target: '_blank',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Tüm yorumlar ve hikayeler
+    </Fragment>
+    <Fragment slot="subtitle">
+      Hastalarımızın gönderdiği yorum ve teşekkürlere göz atabilirsiniz.
+    </Fragment>
+  </CallToAction>
+
+    <!-- Stats Widget ****************** -->
+
+    <Stats
+    stats={[
+      { title: 'Senelik Tecrübe', amount: '25' },
+      { title: 'İşlem', amount: '10K' },
+      { title: 'Atıf', amount: '711' },
+      { title: 'Meslek Sevgisi', amount: 'Sonsuz' },
+    ]}
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Stats>
+  
+  <!-- Steps Widget ****************** 
+
+  <Steps
+    title="Get your dream website up and running in no time with AstroWind."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</span>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** 
+
+  <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    tagline="Components"
+    items={[
+      {
+        title: 'Headers',
+        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        icon: 'flat-color-icons:template',
+        link: 'https://acslive.org'
+      },
+      {
+        title: 'Heros',
+        description:
+          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Content',
+        description:
+          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="İçeriklerimizi inceleyin"
+    information={`Uzmanlık alanları, yazıları ve video içeriklerini inceleyebilirsiniz. Girişimsel kardiyolojinin tüm alanlarında güncel bilgilere ulaşın.
+                `}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Sık Sorulan Sorular"
+    subtitle="Prof. Dr. Alp Burak Çatakoğlu'na sıkça sorulan sorulara yanıtlar."
+    tagline="SSS"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Girişimsel kardiyoloji farklı bir branş mı?',
+        description:
+          "Kardiyoloji kalp ve damar hastalıkları ve tedavisi üzerine uzmanlaşmış bir branştır. Girişimsel kardiyoloji ise bu hastalıkları kateter yöntemi kullanarak, ameliyatsız ve kapalı yöntemlerle, cihazlar kullanarak tedavi etmeyi sağlar.",
+      },
+      {
+        title: 'El bileğinden anjiyo ve stent hasta için daha mı zor?',
+        description:
+          "2008'den bu yana yaptığım el bileğinden ve stent işlemlerinde uzmanlaştığım için hem benim için, hem de hastam için daha pratik, hızlı ve 100 kat daha emniyetli bir yöntemdir. Ayağa hemen kalkılabiliyor.",
+      },
+      {
+        title: 'Hangi sosyal güvenceli hastalara bakıyorsunuz?',
+        description:
+          "Liv Hospital Ulus'un anlaşmalı olduğu tüm sosyal güvenlik kurumlarına hizmet veriyoruz. SGK ile anlaşmamız yoktur.",
+      },
+      {
+        title: "Hangi isminizi kullanıyorsunuz?",
+        description:
+          "Her iki ismimin birlikte kullanılmasını tercih ediyorum. Alp Burak diyebilirsiniz 😊",
+      },
+      {
+        title: 'Tıp dışında ilgi duyduğunuz bir alan var mı?',
+        description:
+          "Sinema ve müzik sayesinde hayata çok yönlü bakabildiğimi düşünüyorum. Ayrıca son zamanlarda yazılımlar geliştiriyorum.",
+      },
+      {
+        title: 'Öğrencilerinize kardiyolojiyi tavsiye ediyor musunuz?',
+        description:
+          "Kardiyolojiye olan tutkum 19 yaşımdan beri hiç değişmedi. Teknolojideki inanılmaz gelişmeler sayesinde tedavi edebildiğim hasta sayısının artması beni çok heyecanlandırıyor. Bu heyecanımı öğrencilerimize de aktarabildiğimi düşünüyorum.",
+      },
+    ]}
+  />
+  
+</Layout>
