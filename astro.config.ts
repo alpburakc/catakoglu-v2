@@ -60,7 +60,7 @@ export default defineConfig({
     sitemap(),
     mdx({
       ...markdownConfig,
-      extendPlugins: false,
+      extendPlugins: true,
     }),
     icon({
       include: {
