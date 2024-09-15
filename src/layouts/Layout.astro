@@ -11,7 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-
+import { Schema } from "astro-seo-schema"
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
 
@@ -36,37 +36,39 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <!-- JSON-LD Structured Data for Person and Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Prof. Dr. Alp Burak Çatakoğlu",
-        "jobTitle": "Cardiologist",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Liv Hospital Ulus",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Ahmet Adnan Saygun C. Canan S. No: 5",
-            "addressLocality": "Ulus",
-            "addressRegion": "Beşiktaş",
-            "postalCode": "34340",
-            "addressCountry": "Türkiye"
-          }
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+905344025050",
-          "contactType": "customer service",
-          "availableLanguage": "Turkish"
-        },
-        "url": "https://catakoglu.com"
-      }
-      </script>
-
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
+    <Schema
+            item={{
+        "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Prof. Dr. Alp Burak Çatakoğlu",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ahmet Adnan Saygun C. Canan S. No: 5",
+      "addressLocality": "Beşiktaş",
+      "postalCode": "34340",
+      "addressRegion": "Istanbul",
+      "addressCountry": "TR"
+    },
+    "url": "https://catakoglu.com",
+    "telephone": "+905344025050",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.061012447278216",
+      "longitude": "29.028555825008027"
+    },
+    "image": ["https://catakoglu.com/_astro/alp_kare_3.C9KxAC3f_Z1eOdC2.webp"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
+            }}
+        />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
