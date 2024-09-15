@@ -19,8 +19,8 @@ const {
   title,
   description,
   publishDate,
-  author,
-  keywords
+  author = "Prof. Dr. Alp Burak Çatakoğlu",
+  image
 } = metadata || {};
 ---
 
@@ -34,6 +34,7 @@ const {
         "headline": title,
         "description": description,
         "datePublished": publishDate,
+        "image": image,
         "author": {
           "@type": "Person",
           "name": author
