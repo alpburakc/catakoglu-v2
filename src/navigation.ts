@@ -56,6 +56,7 @@ export const footerData = {
     {
       title: 'Hakkımızda',
       links: [
+        { text: 'Ana Sayfa', href: '/' },
         { text: 'Özgeçmiş', href: 'ozgecmis' },
         { text: 'Videolar', href: 'https://youtube.com/c/AlpBurakCatakoglu' },
         { text: 'İletişim', href: 'iletisim' },
