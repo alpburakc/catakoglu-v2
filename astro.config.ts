@@ -49,6 +49,10 @@ export default defineConfig({
     '/basin': {
       status: 301,
       destination: '/'
+    },
+    '/yorum': {
+      status: 301,
+      destination: 'https://g.page/r/CVTfdbvFfRteEAE/review'
     }
   },
 
