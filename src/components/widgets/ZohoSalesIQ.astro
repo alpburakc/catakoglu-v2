@@ -1,14 +1,20 @@
-<script is:inline client:load>
+<script is:inline>
+(function () {
+  if (window.__ZOHO_LOADED__) return;
+  window.__ZOHO_LOADED__ = true;
+
   window.$zoho = window.$zoho || {};
   window.$zoho.salesiq = window.$zoho.salesiq || {
+    widgetcode: "siq11efd61032a4825c056d73058e2d423d33880f8151f239ec91d87f463b153e76",
+    values: {},
     ready: function () {}
   };
 
-  const s = document.createElement("script");
+  var s = document.createElement("script");
   s.id = "zsiqscript";
-  s.src =
-    "https://salesiq.zohopublic.com/widget?wc=siq11efd61032a4825c056d73058e2d423d33880f8151f239ec91d87f463b153e76";
+  s.src = "https://salesiq.zohopublic.com/widget";
   s.defer = true;
 
   document.body.appendChild(s);
+})();
 </script>
