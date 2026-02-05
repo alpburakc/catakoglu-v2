@@ -95,7 +95,9 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
             const pattern = /^Sitemap:(.*)$/m;
 
             if (!pattern.test(robotsTxt)) {
-              fs.appendFileSync(robotsTxtFileInOut, `${os.EOL}${os.EOL}Sitemap: ${sitemapUrl}`, {
+              const baseRobots = robotsTxt.trimEnd();
+              const separator = baseRobots.length ? `${os.EOL}${os.EOL}` : '';
+              fs.writeFileSync(robotsTxtFileInOut, `${baseRobots}${separator}Sitemap: ${sitemapUrl}`, {
                 encoding: 'utf8',
                 flag: 'w',
               });

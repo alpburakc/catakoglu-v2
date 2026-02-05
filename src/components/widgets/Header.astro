@@ -58,7 +58,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-default py-3 lg:py-4 px-3 md:px-6 mx-auto w-full',
       {
         'lg:flex lg:justify-between': position !== 'right',
       },
@@ -86,14 +86,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center whitespace-nowrap"
+        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-base tracking-[0.01rem] font-medium lg:justify-center whitespace-nowrap"
       >
         {
           links.map(({ text, href, links }) => (
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button type="button" class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
+                  <button type="button" class="hover:text-link dark:hover:text-white px-4 lg:px-5 py-3 flex items-center">
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
@@ -116,7 +116,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-center',
+                    'hover:text-link dark:hover:text-white px-4 lg:px-5 py-3 flex items-center',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
@@ -134,18 +134,18 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 lg:p-0 lg:justify-self-end',
+        'hidden lg:flex items-center lg:mb-0 fixed w-auto lg:w-auto lg:static justify-start left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 lg:p-0 lg:justify-self-end',
       ]}
     >
-      <div class="items-center flex justify-between w-full lg:w-auto">
+      <div class="items-center flex justify-start lg:justify-between w-auto lg:w-auto">
         <div class="flex">
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block" />}
         </div>
         {
           actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
+            <span class="ml-0 lg:ml-4 rtl:ml-0 rtl:mr-0 lg:rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
+                <Button {...btnProps} class="ml-0 lg:ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
               ))}
             </span>
           ) : (

@@ -23,7 +23,7 @@ export const headerData = {
       href: '/iletisim'
     },
   ],
-  actions: [{ text: 'Randevu', href: '/iletisim' }],
+  actions: [{ variant: 'primary', text: 'Randevu', href: '/iletisim' }],
 };
 
 export const footerData = {

@@ -22,38 +22,44 @@ const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
+const EXCLUDED_SITEMAP_SEGMENTS = ['/homes/', '/landing/', '/etiket/', '/kategori/'];
+
 export default defineConfig({
-  markdown: markdownConfig,
-  i18n: {
-    defaultLocale: "tr",
-    locales: ["tr", "en", "fr"],
+  markdown: {
+    ...markdownConfig,
+    remarkPlugins: [...(markdownConfig.remarkPlugins || []), readingTimeRemarkPlugin],
+    rehypePlugins: [...(markdownConfig.rehypePlugins || []), responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
-    routing: {
-      prefixDefaultLocale: false
-},
+  i18n: {
+    defaultLocale: 'tr',
+    locales: ['tr', 'en', 'fr'],
+  },
+  routing: {
+    prefixDefaultLocale: false,
+  },
   output: 'static',
 
   redirects: {
     '/anjiyostent': {
       status: 301,
-      destination: '/anjiyo'
+      destination: '/anjiyo',
     },
     '/islemler': {
       status: 301,
-      destination: 'uzmanlik-alanlari'
+      destination: 'uzmanlik-alanlari',
     },
     '/randevu': {
       status: 301,
-      destination: '/iletisim'
+      destination: '/iletisim',
     },
     '/basin': {
       status: 301,
-      destination: '/'
+      destination: '/',
     },
     '/yorum': {
       status: 301,
-      destination: 'https://g.page/r/CVTfdbvFfRteEAE/review'
-    }
+      destination: 'https://g.page/r/CVTfdbvFfRteEAE/review',
+    },
   },
 
   integrations: [
@@ -61,7 +67,9 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => !EXCLUDED_SITEMAP_SEGMENTS.some((segment) => page.includes(segment)),
+    }),
     mdx({
       ...markdownConfig,
       extendPlugins: true,
@@ -109,11 +117,6 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
-  },
-
-  markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
   vite: {

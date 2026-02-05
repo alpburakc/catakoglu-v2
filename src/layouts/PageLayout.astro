@@ -3,7 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
-import { Schema } from "astro-seo-schema";
+import { Schema } from 'astro-seo-schema';
 import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
@@ -14,54 +14,63 @@ export interface Props {
 
 const { metadata } = Astro.props;
 
-// Destructure the metadata for the JSON-LD schema
 const {
   title,
   description,
   publishDate,
   updateDate,
-  author = "Prof. Dr. Alp Burak Çatakoğlu",
-  image = "https://catakoglu.com/_astro/anjiyo.PE1aY68E_6Q3TD.webp",
-  schema
+  author = 'Prof. Dr. Alp Burak Çatakoğlu',
+  image = 'https://catakoglu.com/images/alp_burak_catakoglu.jpg',
+  canonical,
+  schema,
 } = metadata || {};
+
+const resolvedImageUrl = (() => {
+  if (!image) return undefined;
+
+  if (typeof image === 'string') {
+    return image.startsWith('http') ? image : new URL(image, 'https://catakoglu.com').toString();
+  }
+
+  if (typeof image === 'object' && 'src' in image && typeof image.src === 'string') {
+    return new URL(image.src, 'https://catakoglu.com').toString();
+  }
+
+  return undefined;
+})();
+
+const mainEntityUrl = canonical || 'https://catakoglu.com';
 ---
 
 <Layout metadata={metadata}>
-
   <head>
     {publishDate && !schema && (
       <Schema
         item={{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": title,
-          "description": description,
-          "datePublished": publishDate,
-          "dateModified": updateDate || publishDate,
-          "image": image,
-          "author": {
-            "@type": "Person",
-            "name": author
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: title,
+          description: description,
+          datePublished: publishDate,
+          dateModified: updateDate || publishDate,
+          image: resolvedImageUrl,
+          author: {
+            '@type': 'Person',
+            name: author,
           },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Prof. Dr. Alp Burak Çatakoğlu",
-            "url": "https://catakoglu.com"
+          publisher: {
+            '@type': 'Organization',
+            name: 'Prof. Dr. Alp Burak Çatakoğlu',
+            url: 'https://catakoglu.com',
           },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://catakoglu.com"
-          }
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': mainEntityUrl,
+          },
         }}
       />
     )}
-    {schema && (
-      Array.isArray(schema) ? (
-        schema.map((item) => <Schema item={item} />)
-      ) : (
-        <Schema item={schema} />
-      )
-    )}
+    {schema && (Array.isArray(schema) ? schema.map((item) => <Schema item={item} />) : <Schema item={schema} />)}
   </head>
 
   <!-- Announcement Widget ******************* -->
@@ -80,5 +89,4 @@ const {
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
-
 </Layout>

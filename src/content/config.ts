@@ -42,7 +42,10 @@ const metadataDefinition = () =>
           cardType: z.string().optional(),
         })
         .optional(),
+
+      schema: z.union([z.record(z.any()), z.array(z.record(z.any()))]).optional(),
     })
+    .passthrough()
     .optional();
 
 const postCollection = defineCollection({
