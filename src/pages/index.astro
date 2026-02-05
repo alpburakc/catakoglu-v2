@@ -15,6 +15,10 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Prof. Dr. Alp Burak Çatakoğlu — Girişimsel Kardiyolog',
+  description:
+    "İstanbul'da Prof. Dr. Alp Burak Çatakoğlu ile girişimsel kardiyoloji: anjiyo, stent, TAVİ, MitraClip, ASD/PFO kapatma ve ameliyatsız kalp tedavileri.",
+  keywords:
+    'istanbul girişimsel kardiyolog, prof dr alp burak çatakoğlu, anjiyo, stent, tavi, mitraclip, asd pfo kapatma',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,15 +29,15 @@ const metadata = {
     <Header
       links={[
         { text: 'Ana Sayfa', href: '/' },
-        { text: 'Özgeçmiş', href: 'ozgecmis' },
-        { text: 'Uzmanlık Alanları', href: 'uzmanlik-alanlari' },
+        { text: 'Özgeçmiş', href: '/ozgecmis' },
+        { text: 'Uzmanlık Alanları', href: '/uzmanlik-alanlari' },
         { text: 'Videolar', href: 'https://youtube.com/c/AlpBurakCatakoglu' },
-        { text: 'İletişim', href: 'iletisim' },
+        { text: 'İletişim', href: '/iletisim' },
       ]}
       actions={[
         {
           text: 'Randevu',
-          href: 'iletisim',
+          href: '/iletisim',
         },
       ]}
       isSticky
@@ -48,11 +52,10 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Özgeçmiş',
-        href: 'ozgecmis',
-        target: '_blank',
+        href: '/ozgecmis',
         icon: 'tabler:arrow-right',
       },
-      { text: 'Randevu', href: 'iletisim' },
+      { text: 'Randevu', href: '/iletisim' },
     ]}
     image={{ src: '~/assets/images/alp_kare_3.png', alt: 'Alp Burak Çatakoğlu' }}
   >
@@ -81,7 +84,7 @@ const metadata = {
       {
         title: '1975 Almanya Doğumlu',
         description:
-          'Almanyanın Augsburg şehrinde doğmuştur.',
+          "Almanya'nın Augsburg şehrinde doğmuştur.",
         icon: 'tabler:brand-tailwind',
       },
       {
@@ -99,19 +102,25 @@ const metadata = {
       {
         title: 'Kardiyoloji Profesörü',
         description:
-          "2008'de Avrupa Kardiyoloji Derneği akademik üyesi (FESC), 2012 yılında kardiyoloji doçenti, 2017 yılında kardiyoloji profesörü ünvanlarını almıştır. İstinye Üniversitesi Tıp Fakültesi kurucu yönetim ve yürütme kurulu üyesidir.",
+          "2008'de Avrupa Kardiyoloji Derneği akademik üyesi (FESC), 2012 yılında kardiyoloji doçenti, 2017 yılında kardiyoloji profesörü unvanlarını almıştır. İstinye Üniversitesi Tıp Fakültesi kurucu yönetim ve yürütme kurulu üyesidir.",
         icon: 'tabler:rocket',
       },
       {
         title: 'Liv Hospital Ulus, Girişimsel Kardiyoloji Direktörü',
         description:
-          "2013 ylından bu yana Liv Hospital Ulus girişimsel kardiyoloji direktörüdür.",
+          "2013 yılından bu yana Liv Hospital Ulus girişimsel kardiyoloji direktörüdür.",
         icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Girişimsel Kardiyoloji Derneği Başkanı',
+        title: 'Girişimsel Kardiyoloji Derneği Önceki Başkanı',
         description:
-          'Türk girişimsel kardiyolojisine pek çok farklı dernekte görev alarak hizmet etmektedir. Avrupa Bifurkasyon Kulübü, Avrupa Girişimsel Kardiyoloji Birliği, Türk Kardiyoloji Derneği, İstanbul Grişimsel Kardiyoloji Akademisi Derneği gibi pek çok kurumda yöneticilik yapmıştır.',
+          'Türk girişimsel kardiyolojisine pek çok farklı dernekte görev alarak hizmet etmektedir. Avrupa Bifurkasyon Kulübü, Avrupa Girişimsel Kardiyoloji Birliği, Türk Kardiyoloji Derneği, İstanbul Girişimsel Kardiyoloji Akademisi Derneği gibi pek çok kurumda yöneticilik yapmıştır.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Kardiyovasküler Araştırmalar Vakfı Başkanı',
+        description:
+          'Türk kardiyolojisinde yeni teknolojilerin ve bilgi üretiminin tasarlandığı ve hayata geçirildiği bir merkez.',
         icon: 'tabler:bulb',
       },
     ]}
@@ -137,12 +146,12 @@ const metadata = {
       {
         title: 'Kompleks koroner girişimler',
         description:
-          'Ana koroner, bifurkasyon, yoğun kalsifik, tam tıkalı açılması zor ve riskli lezyonlarda rotablaör, Shockwave, IVUS, OCT gibi tenolojiler kullanılarak açık ameliyat gerekmeden tedavi yapılabilmektedir.',
+          'Ana koroner, bifurkasyon, yoğun kalsifik, tam tıkalı açılması zor ve riskli lezyonlarda rotablaör, Shockwave, IVUS, OCT gibi teknolojiler kullanılarak açık ameliyat gerekmeden tedavi yapılabilmektedir.',
       },
     ]}
     image={{
       src: '~/assets/images/acs21.png',
-      alt: 'Colorful Image',
+      alt: 'Koroner anjiyografi ve damar görüntüleme',
     }}
   >
     <Fragment slot="content">
@@ -167,7 +176,7 @@ const metadata = {
       {
         title: 'Mitral yetersizlikte MitraClip',
         description:
-          'Mitral kapak yetersiliğinde açık ameliyatı riskli olan hastalarda kasıktan girilerek, kapalı yöntemle yapılan MitraClip mandallama yöntemi ile başarılı sonuçlar elde edilmektedir.',
+          'Mitral kapak yetersizliğinde açık ameliyatı riskli olan hastalarda kasıktan girilerek, kapalı yöntemle yapılan MitraClip mandallama yöntemi ile başarılı sonuçlar elde edilmektedir.',
       },
       {
         title: 'Triküspit yetersizlikte TriClip',
@@ -178,7 +187,7 @@ const metadata = {
     ]}
     image={{
       src: '~/assets/images/acs16.jpg',
-      alt: 'Blueprint Image',
+      alt: 'Kalp kapak hastalıklarında girişimsel tedaviler',
     }}
   >
     <Fragment slot="content">Kalp kapak hastalıkları da açık kalp ameliyatı gerektirmeden, kapalı yöntemlerle tedavi edilebilmektedir. </Fragment>
@@ -292,7 +301,6 @@ Allah bu tür hekimleri başımızdan eksik etmesin.`,
         variant: 'primary',
         text: 'Tüm Yorumlar',
         href: 'https://www.google.com/maps/place/Prof.+Dr.+Alp+Burak+%C3%87atako%C4%9Flu/@41.060808,29.028946,17z/data=!4m8!3m7!1s0x14cab7b00f2ecfcd:0x5e1b7dc5bb75df54!8m2!3d41.060808!4d29.028946!9m1!1b1!16s%2Fg%2F11fd4fk_mr?hl=tr-TR&entry=ttu&g_ep=EgoyMDI0MDkwMi4wIKXMDSoASAFQAw%3D%3D',
-        target: '_blank',
         icon: 'tabler:arrow-right',
       },
     ]}

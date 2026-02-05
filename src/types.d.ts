@@ -61,6 +61,7 @@ export interface MetaData {
 
   openGraph?: MetaDataOpenGraph;
   twitter?: MetaDataTwitter;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 export interface MetaDataRobots {

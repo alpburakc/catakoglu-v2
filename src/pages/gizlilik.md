@@ -1,5 +1,9 @@
 ---
 title: 'Gizlilik Politikası'
+description: 'catakoglu.com gizlilik politikası: kişisel verilerin toplanması, işlenmesi ve korunmasına ilişkin bilgilendirme metni.'
+robots:
+  index: false
+  follow: true
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

@@ -1,5 +1,9 @@
 ---
 title: 'Kullanım Şartları'
+description: 'catakoglu.com kullanım şartları: site kullanım koşulları, sorumluluk reddi ve fikri mülkiyet hükümleri.'
+robots:
+  index: false
+  follow: true
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

@@ -8,26 +8,13 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Uzmanlık Alanları',
-  description: "Prof. Dr. Alp Burak Çatakoğlu'nun 25 senelik tecrübesi ve bilgisi ile tedavi sağladığı girişimsel kalp tedavilerini ayrıntılı inceleyebilirsiniz",
-  keywords: 'alp burak çatakoğlu özgeçmiş, koroner anjiyo, stent, tavi, mitraclip, triclip, tavi, pfo kapatma, istanbul anjiyo yapılan yer, istanbul en iyi stent'
+  description: "İstanbul'da Prof. Dr. Alp Burak Çatakoğlu ile anjiyo, stent, TAVİ, MitraClip, ASD/PFO kapatma, LAA kapatma, karotis stent ve renal denervasyon tedavileri.",
+  keywords: 'istanbul anjiyo, istanbul stent, tavi istanbul, mitraclip istanbul, asd pfo kapatma, karotis stent, renal denervasyon'
 };
 ---
 
 <Layout metadata={metadata}>
  
-  <!-- Hero Widget ******************* 
-
-  <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  />
-
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -40,61 +27,61 @@ const metadata = {
         description:
           'El bileğinden lokal anestezi ile 5 dakikada koroner damarların detaylı görüntülemesi yapılabilmektedir. 1-2 saat içerisinde taburculuk mümkün.',
         icon: 'tabler:trending-down-3',
-        link: 'anjiyo'
+        link: '/anjiyo'
       },
       {
         title: 'Balon ve Stent',
         description:
           'Koroner damarlardaki kritik darlıklar, açık bypass ameliyatı yerine, el bileğinden lokal anestezi ile, stent ve balon kullanılarak tedavi edilebilmektedir.',
         icon: 'tabler:arrow-rotary-straight',
-        link: 'stent'
+        link: '/stent'
       },
       {
         title: 'TAVİ',
         description: `Aort darlıklarında, açık ameliyata gerek kalmadan, kasıktan girilerek biyolojik kapak yerleştirilebilmketedir. Sedasyon ile yapılan işlemden 1-2 gün sonra taburculuk mümkün. `,
         icon: 'tabler:oval-vertical',
-        link: 'tavi'
+        link: '/tavi'
       },
       {
         title: 'MitraClip ve TriClip',
         description:
           'İleri derecede mitral veya triküspit yetmezlikte kasıktan girilerek mitral kapağa yerleştirilen mandal benzeri kliplerle ameliyatsız tedavi başarılı sonuçlar vermektedir.',
         icon: 'tabler:location',
-        link: 'mitraclip'
+        link: '/mitraclip'
       },
       {
         title: 'ASD Kapatma',
         description:
           'Kalp içinde doğuştan iki boşluğu ayıran septum denilen duvarda var olabilen delikler, kasıktan girilerek şemsiye benzeri cihazlarla kapatılabilmektedir.',
         icon: 'tabler:inner-shadow-bottom-right',
-        link: 'asd-kapatma'
+        link: '/asd-kapatma'
       },
       {
         title: 'PFO Kapatma',
         description:
-          'Beyne veya vücuda atan pıhtıların bazen kaynağı kalpte doğumda kapanmayan formaen ovale adındaki delik olabilmektedir. Kasıktan girilerek bu delikler ameliyatsız kapatılmaktadır.',
+          'Beyne veya vücuda atan pıhtıların bazen kaynağı kalpte doğumda kapanmayan foramen ovale adındaki delik olabilmektedir. Kasıktan girilerek bu delikler ameliyatsız kapatılmaktadır.',
         icon: 'tabler:inner-shadow-top-right',
-        link: 'pfo-kapatma'
+        link: '/pfo-kapatma'
       },
       {
         title: 'LAA Kapatma',
         description:
-          'Kalbin sağ kulakçığındaki apendiks adlı kesecikte bazı riritm bozukluklarında felce neden olan pıhtılar oluşabilmektedir. Bu kese kasıktan girilerek kapatılabilir.',
+          'Kalbin sağ kulakçığındaki apendiks adlı kesecikte bazı ritim bozukluklarında felce neden olan pıhtılar oluşabilmektedir. Bu kese kasıktan girilerek kapatılabilir.',
         icon: 'tabler:health-recognition',
-        link: 'laa-kapatma'
+        link: '/laa-kapatma'
       },
       {
         title: 'Karotis Stentleme',
         description: `Beyni besleyen şah damarlarımızdaki (karotis) kritik darlıklar, kasıktan girilerek stent ile tedavi edilebilmektedir. Özel filtreler kullanılarak yapılan işlemler daha güvenlidir.`,
         icon: 'tabler:user-heart',
-        link: 'karotis-stent'
+        link: '/karotis-stent'
       },
       {
         title: 'Renal Denervasyon',
         description:
           'Hipertansiyonda ilaçsız tedavi ile tansiyonu düşürmek renal denervasyon ile mümkün. 30 dakikalık, kasıktan girilerek yapılan bu tedavi ile kalıcı tansiyon kontrolü sağlanmaktadır.',
         icon: 'tabler:graph',
-        link: 'renal-denervasyon'
+        link: '/renal-denervasyon'
       },
     ]}
     >
@@ -231,7 +218,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Randevu alın',
-        href: 'iletisim',
+        href: '/iletisim',
       },
     ]}
     title="Bize danışın!"

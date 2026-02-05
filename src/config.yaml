@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Prof. Dr. Alp Burak Çatakoğlu
     images:
-      - url: '~/assets/images/alp_burak_catakoglu.png'
+      - url: 'https://catakoglu.com/images/alp_burak_catakoglu.png'
         width: 1200
         height: 630
     type: website

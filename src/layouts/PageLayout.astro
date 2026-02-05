@@ -19,37 +19,49 @@ const {
   title,
   description,
   publishDate,
+  updateDate,
   author = "Prof. Dr. Alp Burak Çatakoğlu",
-  image = "https://catakoglu.com/_astro/anjiyo.PE1aY68E_6Q3TD.webp"
+  image = "https://catakoglu.com/_astro/anjiyo.PE1aY68E_6Q3TD.webp",
+  schema
 } = metadata || {};
 ---
 
 <Layout metadata={metadata}>
 
   <head>
-    <Schema
-      item={{
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": title,
-        "description": description,
-        "datePublished": publishDate,
-        "image": image,
-        "author": {
-          "@type": "Person",
-          "name": author
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Prof. Dr. Alp Burak Çatakoğlu",
-          "url": "https://catakoglu.com"
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://catakoglu.com"
-        }
-      }}
-    />
+    {publishDate && !schema && (
+      <Schema
+        item={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": title,
+          "description": description,
+          "datePublished": publishDate,
+          "dateModified": updateDate || publishDate,
+          "image": image,
+          "author": {
+            "@type": "Person",
+            "name": author
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Prof. Dr. Alp Burak Çatakoğlu",
+            "url": "https://catakoglu.com"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://catakoglu.com"
+          }
+        }}
+      />
+    )}
+    {schema && (
+      Array.isArray(schema) ? (
+        schema.map((item) => <Schema item={item} />)
+      ) : (
+        <Schema item={schema} />
+      )
+    )}
   </head>
 
   <!-- Announcement Widget ******************* -->

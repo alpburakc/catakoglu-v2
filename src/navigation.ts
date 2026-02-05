@@ -8,11 +8,11 @@ export const headerData = {
     },  
     {
       text: 'Özgeçmiş',
-      href: 'ozgecmis'
+      href: '/ozgecmis'
     }, 
     {
       text: 'Uzmanlık Alanları',
-      href: 'uzmanlik-alanlari'
+      href: '/uzmanlik-alanlari'
     }, 
     {
       text: 'Videolar',
@@ -20,10 +20,10 @@ export const headerData = {
     },
     {
       text: 'İletişim',
-      href: 'iletisim'
+      href: '/iletisim'
     },
   ],
-  actions: [{ text: 'Randevu', href: 'iletisim', target: '_blank' }],
+  actions: [{ text: 'Randevu', href: '/iletisim' }],
 };
 
 export const footerData = {
@@ -31,36 +31,35 @@ export const footerData = {
     {
       title: 'Koroner',
       links: [
-        { text: 'Koroner Anjiyografi', href: 'anjiyo' },
-        { text: 'Balon ve Stent', href: 'stent' },
+        { text: 'Koroner Anjiyografi', href: '/anjiyo' },
+        { text: 'Balon ve Stent', href: '/stent' },
       ],
     },
     {
       title: 'Yapısal',
       links: [
-        { text: 'TAVİ', href: 'tavi' },
-        { text: 'MitraClip', href: 'mitraclip' },
-        { text: 'TriClip', href: 'mitraclip' },
-        { text: 'ASD Kapatma', href: 'asd-kapatma' },
-        { text: 'PFO Kapatma', href: 'pfo-kapatma' },
-        { text: 'LAA Kapatma', href: 'laa-kapatma' },
+        { text: 'TAVİ', href: '/tavi' },
+        { text: 'MitraClip / TriClip', href: '/mitraclip' },
+        { text: 'ASD Kapatma', href: '/asd-kapatma' },
+        { text: 'PFO Kapatma', href: '/pfo-kapatma' },
+        { text: 'LAA Kapatma', href: '/laa-kapatma' },
       ],
     },
     {
       title: 'Periferik',
       links: [
-        { text: 'Karotis Stent', href: 'karotis' },
-        { text: 'Renal Denervasyon', href: 'renal-denervasyon' },
+        { text: 'Karotis Stent', href: '/karotis-stent' },
+        { text: 'Renal Denervasyon', href: '/renal-denervasyon' },
       ],
     },
     {
       title: 'Hakkımızda',
       links: [
         { text: 'Ana Sayfa', href: '/' },
-        { text: 'Özgeçmiş', href: 'ozgecmis' },
+        { text: 'Özgeçmiş', href: '/ozgecmis' },
         { text: 'Videolar', href: 'https://youtube.com/c/AlpBurakCatakoglu' },
-        { text: 'İletişim', href: 'iletisim' },
-        { text: 'Randevu', href: 'iletisim' },
+        { text: 'İletişim', href: '/iletisim' },
+        { text: 'Randevu', href: '/iletisim' },
       ],
     },
   ],

@@ -19,7 +19,9 @@
     "check:prettier": "prettier --check .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "fix:prettier": "prettier -w .",
+    "update:dates": "node scripts/update-update-date.mjs",
+    "generate:og": "node scripts/generate-og-images.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.7",

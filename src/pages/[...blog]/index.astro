@@ -30,6 +30,10 @@ const metadata = merge(
   {
     title: post.title,
     description: post.excerpt,
+    publishDate: post.publishDate,
+    updateDate: post.updateDate || post.publishDate,
+    author: post.author,
+    image: image,
     robots: {
       index: blogPostRobots?.index,
       follow: blogPostRobots?.follow,

@@ -45,7 +45,9 @@ const {
                 />
               )}
             </div>
-      <div class="text-center pt-10 pb-10 md:pb-16 max-w-5xl mx-auto">
+          )
+        }
+        <div class="text-center pt-10 pb-10 md:pb-16 max-w-5xl mx-auto">
         {
           tagline && (
             <p
@@ -81,10 +83,7 @@ const {
           }
         </div>
         {content && <Fragment set:html={content} />}
-      </div>
-      
-          )
-        }
+        </div>
       </div>
     </div>
   </div>
